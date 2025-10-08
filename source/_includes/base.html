@@ -3,8 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <title>{{ title }}</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    {{ content }}
+    <div class="bigBox">
+      <!-- {% if tags != plant %}
+      {% endif %} -->
+      <a href="/">
+        <h1>recipe book</h1>
+      </a>
+
+      {{ content }}
+    </div>
   </body>
 </html>
