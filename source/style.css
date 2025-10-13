@@ -1,74 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Euphoria+Script&display=swap");
 
-body{
+:root {
+  --bgColor: beige;
+  --darkColor : rgb(212, 212, 192);
+  --edgeRadius: 1em;
+  --centerWidth: 70vw;
+}
+
+/* Base style------------------------------------------------- */
+
+.sideNav {
+  position: fixed;
+  top: 35%;
+  right: 0;
+  width: 1vw;
+  height: fit-content;
+  padding: 10px;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: width 0.3s ease-in-out;
+  border: solid 1px black;
+}
+.sideNav:hover {
+  width: 7vw;
+}
+.sideNav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.sideNav li {
+  list-style: none;
+  margin-left: 5em;
+  transition: margin-left 0.3s ease-in-out;
+}
+.sideNav:hover li {
+  margin-left: 0em;
+}
+
+.sideNav li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  display: block;
+  padding: 0.5em;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+.sideNav li a:hover {
+  background-color: var(--bgColor);
+}
+
+button{
+    font-family: "Domine", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(181, 181, 158);
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeTitle {
+  background-color: var(--bgColor);
+  width: fit-content;
+  padding: 1em 2em;
+  border-top-left-radius: var(--edgeRadius);
+  border-top-right-radius: var(--edgeRadius);
+}
+
+.headerTitle {
+  font-family: "Euphoria Script", cursive;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  letter-spacing: 0.2em;
+  font-size: 2.5em;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  margin-top: 3vh;
+}
+
+.bodyCont {
+  background-color: var(--bgColor);
+  width: 100%;
+  /* height: 100vh; */
+  border-top-left-radius: var(--edgeRadius);
+  border-top-right-radius: var(--edgeRadius);
+  /* overflow-y: scroll; */
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+/* index style------------------------------------------------ */
+.recCont {
+  margin: auto;
+  padding: 20px;
+  width: var(--centerWidth);
+  margin-bottom: 8vh;
+
+  /* background-color: violet; */
+}
+.recCont h1 {
+  text-align: center;
+  margin-top: 10vh;
+}
+#picks {
+  display: grid;
+  gap: 16px;
+  margin: 12px 0;
+  grid-template-columns: repeat(3, 1fr);
+}
+section {
+  border-radius: 12px;
+  padding: 12px;
+  background-color: white;
+}
+.card a {
+  font-weight: 700;
+  text-decoration: none;
+}
+.card .cardImgBox {
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card img {
+  width: 100%;
+}
+.muted {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+#reroll {
+  display: block;
+  margin: auto;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color:  rgb(96, 96, 96);
+    background-color: white;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+#reroll:hover {
+  color: black;
+}
+
+/* Recipe select part ------------------------------------------------  */
+#recipeCont{
+    width: var(--centerWidth);
+    margin: auto;
+    height: 100vh;
+    scroll-snap-align: start;
+    padding-top: 5vh;
+}
+#sortIndex, #sortTitle{
+    font-family: "Domine", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 8px 16px;
+    border: none;
+    font-size: 1.2em;
+    border-top-left-radius: var(--edgeRadius);
+    border-top-right-radius: var(--edgeRadius);
+    cursor: pointer;
+    color:  rgb(87, 87, 87);
+    background-color: rgb(124, 124, 118);
+    transition: all 0.3s ease-in-out;
+}
+
+#sortIndex.active, #sortTitle.active{
+    background-color: var(--darkColor);
+    color:  black;
+    font-size: 1.5em;
+}
+
+#recipeContGrid{
+    background-color: var(--darkColor);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2%;
+    padding: 2%;
+    border-bottom-left-radius: var(--edgeRadius);
+    border-bottom-right-radius: var(--edgeRadius);
+    border-top-right-radius: var(--edgeRadius);
+}
+
+#recipeContGrid a{
+    display: block;
+}
+.recipe{
+    display: block;
+}
+.previewImgBox{
+    width: 100%;
+    height: 25vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.previewImgBox img{
+    width: 100%;
+    transition: width 0.3s ease-in-out;
+}
+/* .previewImgBox img:hover{
+    width: 110%;
+} */
+
+
+.recipe a{
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+.previewTextBox h4{
+    font-size: 12pt;
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: all 0.3s ease-in-out;
 }
-.bigBox{
-    margin-top: 25vh;
+/* .previewTextBox h4:hover{
+    font-size: 20pt;
+} */
+.previewTextBox p{
+    font-size: 10pt;
+    margin-top: 5px;
 }
-.bigBox a{
-    text-decoration: none;
-}
-.bigBox h1{
-    font-size: 24pt;
-    text-align: center;
-    color: black;
-}
-
-.plantListBox{
-    display: flex;
-
-}
-
-/* ------------------------------------ */
-/* plant List style */
-
-
-.plantList{
-    background-color: rgb(172, 172, 172);
-    width: 150px;
-    margin: 15px;
-    padding: 5px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-.plantList a{
-    text-decoration: none;
-    color: black;
-
-}
-
-.plantList img{
-    width: 100%;
-    height: 100%;
-    margin: 5px;
-}
-
-
-/* ------------------------------------ */
-/* plant style */
-
-.box1{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.box2{
-    display: flex;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    background-color: beige;
-    border-radius: 15px;
-}
-
-.box2 img{
-    width: 200px;
-    height: 200px;
-    margin: 20px;
+.recipe:hover .previewImgBox img{
+    width: 110%;
 }

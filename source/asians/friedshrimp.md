@@ -1,17 +1,16 @@
 ---
 title: Fried Shrimp
 photo: https://i.ibb.co/mCb38mgb/IMG-2588.jpg
-index: 2
+index: 10
 time: 30-60
 preTime: 15
-layout: recipe.html
 ingredients:
-  shrimp
-  salt
-  pepper
+  - shrimp
+  - salt
+  - pepper
 when:
-  lunch
-  dinner
+  - lunch
+  - dinner
 ---
 # this is shrimp
 ## recipe

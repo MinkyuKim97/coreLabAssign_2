@@ -9,6 +9,7 @@ export default function (eleventyConfig) {
 	// This will copy over any jpg, css, or javascript files from
 	// the input directory to the output directory
 	eleventyConfig.addPassthroughCopy("source/**/*.jpg");
+	eleventyConfig.addPassthroughCopy("source/**/*.JPG");
 	eleventyConfig.addPassthroughCopy("source/**/*.css");
 	eleventyConfig.addPassthroughCopy("source/**/*.js");
 

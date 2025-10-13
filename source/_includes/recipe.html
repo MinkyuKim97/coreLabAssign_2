@@ -8,11 +8,16 @@ layout: base.html
   <div class="box2">
     <img src="{{ photo }}" />
     {{ preTime }}
+
+    {% for ingredients in ingredients %}
+        <div class="ingDiv" data-ing="{{ forloop.index0 }}">
+            {{ ingredients }}
+        </div>
+    {% endfor %}
+
     {{ content }}
   </div>
-  
 </div>
-
 
 <!-- title: Fried Shrimp
 photo: https://i.ibb.co/mCb38mgb/IMG-2588.jpg
