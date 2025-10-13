@@ -15,7 +15,7 @@
       return {
         id: node.dataset.id,
         url: node.dataset.url,
-        title: node.dataset.title || '무제 레시피',
+        title: node.dataset.title || 'NONE',
         desc: node.dataset.desc || '',
         when,
         style,
@@ -68,10 +68,9 @@
 
   function renderCard(host, item) {
     host.innerHTML = item
-      ? `<a href="${item.url}">
+      ? `<a href="/${item.url}">
         <h3>${item.title}</h3>
-        <div class="cardImgBox"><img src="${item.photo}" /> </div>
-         
+        <div class="cardImgBox"><img src="${item.photo}" /> </div>         
          ${item.desc ? `<p class="muted">${item.desc}</p>` : ``}
          <div class="muted">
            style: ${item.style.join(', ') || '—'}

@@ -6,3 +6,4 @@ node_modules
 
 # This is created by `npm run serve` and contains your generated Eleventy site
 _site
+.DS_Store
