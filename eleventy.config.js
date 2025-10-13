@@ -1,3 +1,5 @@
+
+import { HtmlBasePlugin } from "@11ty/eleventy";
 // This function is used to configure the Eleventy generator.
 
 // If you want to experiment with other configuration settings,
@@ -5,6 +7,7 @@
 export default function (eleventyConfig) {
 	// This sets the input directory for our site
 	eleventyConfig.setInputDirectory("source");
+	eleventyConfig.addPlugin(HtmlBasePlugin);
 
 	// This will copy over any jpg, css, or javascript files from
 	// the input directory to the output directory

@@ -138,9 +138,11 @@ section {
 .card a {
   font-weight: 700;
   text-decoration: none;
+  color: black;
 }
 .card .cardImgBox {
   overflow: hidden;
+    border: solid 1px black;
   border-radius: 12px;
   margin-bottom: 8px;
   width: 100%;
@@ -151,10 +153,16 @@ section {
 }
 .card img {
   width: 100%;
+  transition: all 0.3s ease-in-out;
 }
+.card a:hover img {
+  width: 110%;
+}
+
 .muted {
   color: #64748b;
   font-size: 0.9rem;
+  font-weight: 400;
 }
 
 #reroll {
@@ -163,14 +171,16 @@ section {
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 1em;
   cursor: pointer;
   color:  rgb(96, 96, 96);
     background-color: white;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: normal;
 }
 #reroll:hover {
   color: black;
+  letter-spacing: 0.1em; 
 }
 
 /* Recipe select part ------------------------------------------------  */
@@ -224,6 +234,8 @@ section {
     width: 100%;
     height: 25vh;
     overflow: hidden;
+    border: solid 1px black;
+    border-radius: var(--edgeRadius);
     display: flex;
     justify-content: center;
     align-items: center;
