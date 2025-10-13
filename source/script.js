@@ -68,7 +68,7 @@
 
   function renderCard(host, item) {
     host.innerHTML = item
-      ? `<a href="/${item.url}">
+      ? `<a href="./${item.url}">
         <h3>${item.title}</h3>
         <div class="cardImgBox"><img src="${item.photo}" /> </div>         
          ${item.desc ? `<p class="muted">${item.desc}</p>` : ``}
