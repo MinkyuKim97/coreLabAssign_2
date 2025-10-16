@@ -19,11 +19,11 @@
   background-color: white;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  transition: width 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   border: solid 1px black;
 }
 .sideNav:hover {
-  width: 7vw;
+  width: 10vw;
 }
 .sideNav ul {
   margin: 0;
@@ -296,3 +296,17 @@ section {
 .recipe:hover .previewImgBox img{
     width: 110%;
 }
+
+
+/* Recipe Page style-------------------------------------------------  */
+.recipeTopDiv{
+    width: var(--centerWidth);
+    margin: auto;
+    height: 100vh;
+    scroll-snap-align: start;
+    padding-top: 5vh;
+}
+
+/* 1. 내부 구조 만들기
+2. 데이터 추가
+3. About/Contact 추가 */

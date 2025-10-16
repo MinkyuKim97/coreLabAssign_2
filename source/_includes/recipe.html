@@ -4,31 +4,28 @@ layout: base.html
 
 <link rel="stylesheet" href="/style.css" />
 
-<div class="box1">
-  <div class="box2">
-    <img src="{{ photo }}" />
-    {{ preTime }}
-
-    {% for ingredients in ingredients %}
-        <div class="ingDiv" data-ing="{{ forloop.index0 }}">
-            {{ ingredients }}
-        </div>
-    {% endfor %}
-
-    {{ content }}
+<div class="recipeTopDiv">
+  <div class="recipeTitleBox">
+    {{title}}
+  </div>
+  <div class="recipreTotalBox">
+    <div class="recipeInfoBox">
+      <div class="recipeTime">{{time}} mins</div>
+      <div class="recipePretime">{{preTime}} mins</div>
+      <div class="recipeWhen">{{when}}</div>
+      <div class="recipeStyle">{{style}}</div>
+      {% for ingredients in ingredients %}
+      <div class="recipeIngri" data-ing="{{ forloop.index0 }}">
+        {{ ingredients }}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="recipreImage">
+      <img src="{{ photo }}" />
+    </div>
   </div>
 </div>
 
-<!-- title: Fried Shrimp
-photo: https://i.ibb.co/mCb38mgb/IMG-2588.jpg
-index: 2
-time: 30-60
-preTime: 15
-layout: recipe.html
-ingredients:
-  shrimp
-  salt
-  pepper
-when:
-  lunch
-  dinner -->
+<div class="recipeBody">
+  {{content}}
+</div>
