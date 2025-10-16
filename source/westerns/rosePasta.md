@@ -12,7 +12,7 @@ when:
   dinner
 style: italian
 ---
-# this is Rose Pasta
+# 1. Prepare ingredients
 ## recipe
 
 Fist do this and that and yumyum

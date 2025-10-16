@@ -2,7 +2,7 @@
 
 :root {
   --bgColor: beige;
-  --darkColor : rgb(212, 212, 192);
+  --darkColor: rgb(212, 212, 192);
   --edgeRadius: 1em;
   --centerWidth: 70vw;
 }
@@ -53,11 +53,11 @@
   background-color: var(--bgColor);
 }
 
-button{
-    font-family: "Domine", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
+button {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -68,6 +68,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  overflow-x: hidden;
 }
 
 header {
@@ -142,7 +143,7 @@ section {
 }
 .card .cardImgBox {
   overflow: hidden;
-    border: solid 1px black;
+  border: solid 1px black;
   border-radius: 12px;
   margin-bottom: 8px;
   width: 100%;
@@ -173,140 +174,240 @@ section {
   border-radius: 8px;
   font-size: 1em;
   cursor: pointer;
-  color:  rgb(96, 96, 96);
-    background-color: white;
+  color: rgb(96, 96, 96);
+  background-color: white;
   transition: all 0.3s ease-in-out;
   letter-spacing: normal;
 }
 #reroll:hover {
   color: black;
-  letter-spacing: 0.1em; 
+  letter-spacing: 0.1em;
 }
 
 /* Recipe select part ------------------------------------------------  */
-#recipeCont{
-    width: var(--centerWidth);
-    margin: auto;
-    height: 100vh;
-    scroll-snap-align: start;
-    padding-top: 5vh;
+#recipeCont {
+  width: var(--centerWidth);
+  margin: auto;
+  height: 100vh;
+  scroll-snap-align: start;
+  padding-top: 5vh;
 }
-.controlBox{
-  display: flex;                 /* 가로로 정렬 */
+.controlBox {
+  display: flex; /* 가로로 정렬 */
   justify-content: space-between; /* 양 끝으로 밀기 */
-  align-items: end;  
+  align-items: end;
 }
-#sortIndex, #sortTitle{
-    font-family: "Domine", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    padding: 8px 16px;
-    border: none;
-    font-size: 1.2em;
-    border-top-left-radius: var(--edgeRadius);
-    border-top-right-radius: var(--edgeRadius);
-    cursor: pointer;
-    color:  rgb(87, 87, 87);
-    background-color: rgb(124, 124, 118);
-    transition: all 0.3s ease-in-out;
+#sortIndex,
+#sortTitle {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding: 8px 16px;
+  border: none;
+  font-size: 1.2em;
+  border-top-left-radius: var(--edgeRadius);
+  border-top-right-radius: var(--edgeRadius);
+  cursor: pointer;
+  color: rgb(87, 87, 87);
+  background-color: rgb(124, 124, 118);
+  transition: all 0.3s ease-in-out;
 }
-#num1, #num2, #num3, #num4{
-    font-family: "Domine", serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    padding: 8px 16px;
-    margin: 0;
-    border: none;
-    font-size: 0.8em;
-    border-top-left-radius: var(--edgeRadius);
-    border-top-right-radius: var(--edgeRadius);
-    cursor: pointer;
-    color:  rgb(87, 87, 87);
-    background-color: rgb(124, 124, 118);
-    transition: all 0.3s ease-in-out;
+#num1,
+#num2,
+#num3,
+#num4 {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  padding: 8px 16px;
+  margin: 0;
+  border: none;
+  font-size: 0.8em;
+  border-top-left-radius: var(--edgeRadius);
+  border-top-right-radius: var(--edgeRadius);
+  cursor: pointer;
+  color: rgb(87, 87, 87);
+  background-color: rgb(124, 124, 118);
+  transition: all 0.3s ease-in-out;
 }
-#num1.active, #num2.active, #num3.active, #num4.active{
-    background-color: var(--darkColor);
-    color:  black;
-    font-size: 0.8em;
-}
-
-#sortIndex.active, #sortTitle.active{
-    background-color: var(--darkColor);
-    color:  black;
-    font-size: 1.5em;
-}
-
-#recipeContGrid{
-    background-color: var(--darkColor);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2%;
-    padding: 2%;
-    border-bottom-left-radius: var(--edgeRadius);
-    border-bottom-right-radius: var(--edgeRadius);
-    /* border-top-right-radius: var(--edgeRadius); */
+#num1.active,
+#num2.active,
+#num3.active,
+#num4.active {
+  background-color: var(--darkColor);
+  color: black;
+  font-size: 0.8em;
 }
 
-#recipeContGrid a{
-    display: block;
+#sortIndex.active,
+#sortTitle.active {
+  background-color: var(--darkColor);
+  color: black;
+  font-size: 1.5em;
+}
+
+#recipeContGrid {
+  background-color: var(--darkColor);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2%;
+  padding: 2%;
+  border-bottom-left-radius: var(--edgeRadius);
+  border-bottom-right-radius: var(--edgeRadius);
+  /* border-top-right-radius: var(--edgeRadius); */
+}
+
+#recipeContGrid a {
+  display: block;
 }
 /* .recipe{
     display: block;
 } */
-.previewImgBox{
-    width: 100%;
-    height: 25vh;
-    overflow: hidden;
-    border: solid 1px black;
-    border-radius: var(--edgeRadius);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+.previewImgBox {
+  width: 100%;
+  height: 25vh;
+  overflow: hidden;
+  border: solid 1px black;
+  border-radius: var(--edgeRadius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
-.previewImgBox img{
-    width: 100%;
-    transition: width 0.3s ease-in-out;
+.previewImgBox img {
+  width: 100%;
+  transition: width 0.3s ease-in-out;
 }
 /* .previewImgBox img:hover{
     width: 110%;
 } */
 
-
-.recipe a{
-    text-decoration: none;
-    color: black;
-    display: block;
+.recipe a {
+  text-decoration: none;
+  color: black;
+  display: block;
 }
-.previewTextBox h4{
-    font-size: 12pt;
-    margin: 0;
-    transition: all 0.3s ease-in-out;
+.previewTextBox h4 {
+  font-size: 12pt;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
 }
 /* .previewTextBox h4:hover{
     font-size: 20pt;
 } */
-.previewTextBox p{
-    font-size: 10pt;
-    margin-top: 5px;
+.previewTextBox p {
+  font-size: 10pt;
+  margin-top: 5px;
 }
-.recipe:hover .previewImgBox img{
-    width: 110%;
+.recipe:hover .previewImgBox img {
+  width: 110%;
 }
-
 
 /* Recipe Page style-------------------------------------------------  */
-.recipeTopDiv{
-    width: var(--centerWidth);
-    margin: auto;
-    height: 100vh;
-    scroll-snap-align: start;
-    padding-top: 5vh;
+.recipeTopDiv {
+  width: var(--centerWidth);
+  margin: auto;
+  padding-top: 5vh;
+}
+.recipeTitleBox {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  padding: 8px 25px;
+  border: none;
+  font-size: 2em;
+  border-top-left-radius: var(--edgeRadius);
+  border-top-right-radius: var(--edgeRadius);
+  color: rgb(0, 0, 0);
+  background-color: var(--darkColor);
+  transition: all 0.3s ease-in-out;
+  width: fit-content;
+}
+.recipreTotalBox {
+  /* height: 50vh; */
+  height: 600px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  background-color: var(--darkColor);
+  border-bottom-left-radius: var(--edgeRadius);
+  border-bottom-right-radius: var(--edgeRadius);
+  border-top-right-radius: var(--edgeRadius);
+
 }
 
-/* 1. 내부 구조 만들기
-2. 데이터 추가
-3. About/Contact 추가 */
+.recipeInfoBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.recipeInfoHorBox{
+  display: grid;
+  grid-template-rows: repeat(4,1fr);
+  gap: 20px;
+}
+.recipeDetails {
+  background-color: yellow;
+  padding: 15px;
+  background-color: white;
+  border-radius: var(--edgeRadius);
+  border: solid 1px black;
+}
+/* #ingredientsDiv{
+  grid-column: 3/4;
+  grid-row: 1/3;
+} */
+.recipeDetails h1 {
+  margin-top: 0;
+  text-align: left;
+  font-size: 1.2em;
+}
+.recipeDetails p {
+  margin-top: 0px;
+  margin-left: 0px;
+  text-align: left;
+  font-size: 0.8em;
+}
+
+.recipeImage {
+  border-radius: var(--edgeRadius);
+  height: 100%;
+  overflow: hidden;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2/4;
+}
+.recipeImage img {
+  width: 100%;
+}
+
+
+.recipeBody  {
+  width: var(--centerWidth);
+  margin: auto;
+  padding-top: 10vh;
+  padding-bottom: 30vh;
+}
+
+.recipeBody h1 {
+  font-size: 1.5em;
+  margin-bottom: 0;
+  border-bottom: solid 2px black;
+  padding-bottom: 5px;
+}
+.recipeBody h2 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+}
+.recipeBody p{
+  line-height: 1.6em;
+  font-size: 1em;
+  margin-top: 0;
+}
