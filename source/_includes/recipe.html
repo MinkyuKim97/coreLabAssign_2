@@ -19,7 +19,7 @@ layout: base.html
         </div>
         <div class="recipeDetails">
           <h1>When:</h1>
-          <p>At {{when}}</p>
+          <p>At <br> {{when}}</p>
         </div>
         <div class="recipeDetails">
           <h1>Style:</h1>
@@ -31,7 +31,9 @@ layout: base.html
 
         {% for ingredients in ingredients %}
         <div class="recipeIngreContents" data-ing="{{ forloop.index0 }}">
+          <p>
           - {{ ingredients }}
+          </p>
         </div>
         {% endfor %}
       </div>

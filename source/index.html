@@ -12,11 +12,6 @@ title: Doggies' Bowl
 </div>
 
 <button id="reroll" type="button">Other Combinations</button>
-{%- comment -%}
-모든 recipe를 숨겨 심어둠. JS가 여기서 조건(when/style)을 만족하는 것만 뽑아 표시.
-- when: morning/lunch/dinner 중 다중값 가능 (문자열, 배열 등 어떤 형태든 허용)
-- style: western/asian/dessert 등. 없으면 tags에서 추론 (확장 가능)
-{%- endcomment -%}
 <ul id="recipe-candidates" hidden>
   {% for r in collections.recipe %}
   <li class="candidate"
@@ -79,18 +74,6 @@ title: Doggies' Bowl
       </a>
 
     </div>
-  <!-- <div
-    class="plant"
-    data-index="{{ recipe.data.index }}"
-    data-title="{{ recipe.data.title }}"
-    hidden
-  >
-    <a href="{{ recipe.url }}">
-      <img src="{{recipe.data.photo}}" style="width: 100px" />
-
-      {{recipe.data.title}}
-    </a>
-  </div> -->
   {% endfor %}
   </div>
 
@@ -103,28 +86,3 @@ title: Doggies' Bowl
  
 
 </script>
-
-<!-- {% assign plants = collections.plant | sort: "data.index" %}
-<div class="plantListBox">
-  {% for plant in plants %}
-    <div class="plantList">
-      <a href="{{ plant.url }}">
-        {{ plant.data.title }}
-        <img src="{{ plant.data.photo }}" />
-      </a>
-    </div>
-  {% endfor %}
-</div> -->
-
-<!-- <div class="plantListBox">
-  {% for plant in collections.plant %}
-    {% if plant.data.index == 5 %}
-    <div class="plantList">
-      <a href="{{ plant.url }}">
-        {{ plant.data.title }}
-        <img src="{{ plant.data.photo }}" />
-      </a>
-    </div>
-    {% endif %}
-  {% endfor %}
-</div> -->
