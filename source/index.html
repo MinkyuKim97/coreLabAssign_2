@@ -37,9 +37,17 @@ title: Doggies' Bowl
 
 
 <div id="recipeCont">
+  <div class="controlBox">
   <div class="controls">
-    <button id="sortTitle">Sort by Title</button>
-    <button id="sortIndex">Sort by Index</button>
+    <button id="sortTitle">Recipe Name</button>
+    <button id="sortIndex">Time Takes</button>
+  </div>
+  <div class="controls">
+    <button id="num1" data-num="1">All</button>
+    <button id="num2" data-num="2">Breakfast</button>
+    <button id="num3" data-num="3">Lunch/Dinner</button>
+    <button id="num4" data-num="4">Dessert</button>
+  </div>
   </div>
 
 
@@ -49,6 +57,10 @@ title: Doggies' Bowl
       class="recipe"
       data-index="{{ recipe.data.index }}"
       data-title="{{ recipe.data.title }}"
+      data-style="{{ recipe.data.style }}"
+      data-time="{{ recipe.data.time }}"
+      data-when="{{ recipe.data.when }}"
+      hidden
       >
       <a href="{{ recipe.url }}">
         <div class="previewImgBox">
@@ -81,12 +93,7 @@ title: Doggies' Bowl
   </div> -->
   {% endfor %}
   </div>
-  <div class="controls">
-    <button data-num="1">Show 1</button>
-    <button data-num="2">Show 2</button>
-    <button data-num="3">Show 3</button>
-    <button data-num="4">Show 4</button>
-  </div>
+
 
 </div>
 

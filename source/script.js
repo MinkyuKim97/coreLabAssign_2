@@ -98,17 +98,10 @@
 
 
 
-  const buttons = document.querySelectorAll(".controls button");
-  const plants = document.querySelectorAll(".plant");
+  // const buttons = document.querySelectorAll(".controls button");
+  // const plants = document.querySelectorAll(".plant");
 
-  // buttons.forEach((btn) => {
-  //   btn.addEventListener("click", () => {
-  //     const target = btn.dataset.num;
-  //     plants.forEach((p) => {
-  //       p.hidden = p.dataset.index !== target;
-  //     });
-  //   });
-  // });
+ 
 
   // show index==1 at first
   document.querySelector('[data-num="1"]').click();
@@ -154,7 +147,7 @@
   const sortIndexBtn = document.getElementById("sortIndex");
   sortIndexBtn.addEventListener("click", () => {
     const sorted = [...items].sort(
-      (a, b) => Number(a.dataset.index) - Number(b.dataset.index)
+      (a, b) => Number(a.dataset.time) - Number(b.dataset.time)
     );
     render(sorted);
     sortState = 1;
@@ -172,3 +165,92 @@
       sortIndexBtn.classList.remove("active");
     }
   });
+
+const filterButtons = [
+  document.getElementById("num1"),
+  document.getElementById("num2"),
+  document.getElementById("num3"),
+  document.getElementById("num4"),
+];
+
+let filterStat = 0;
+
+
+filterButtons[0].classList.add("active");
+const recipes = document.querySelectorAll(".recipe");
+recipes.forEach(p => p.hidden = false);
+
+filterButtons.forEach((btn, index) => {
+
+  btn.addEventListener("click", () => {
+    filterStat = index;
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    switch (index) {
+      case 0:
+        {
+
+          recipes.forEach(p => p.hidden = false);
+        }
+        break;
+
+      case 1:
+        {
+          const target = "morning";
+          recipes.forEach(p => {
+            p.hidden = p.dataset.when !== target;
+          });
+        }
+        break;
+
+      case 2:
+        {
+          const target_1 = "lunch";
+          const target_2 = "dinner";
+          recipes.forEach(p => {
+            const whenList = String(p.dataset.when)
+    .toLowerCase()
+    .split(/[\s,;|]+/)
+    .filter(Boolean);
+
+
+  const show =
+    whenList.includes(target_1.toLowerCase()) ||
+    whenList.includes(target_2.toLowerCase());
+  p.hidden = !show;
+            // p.hidden = p.dataset.when !== target_1;
+          });
+        }
+        break;
+
+      case 3:
+        {
+          const target = "desserts";
+          recipes.forEach(p => {
+            p.hidden = p.dataset.style !== target;
+          });
+        }
+        break;
+      }
+  });
+
+
+  btn.addEventListener("mouseenter", () => {
+    if (filterStat !== index) btn.classList.add("active");
+  });
+
+
+  btn.addEventListener("mouseleave", () => {
+    if (filterStat !== index) btn.classList.remove("active");
+  });
+});
+
+//  buttons.forEach((btn) => {
+//     btn.addEventListener("click", () => {
+//       const target = btn.dataset.num;
+//       plants.forEach((p) => {
+//         p.hidden = p.dataset.index !== target;
+//       });
+//     });
+//   });

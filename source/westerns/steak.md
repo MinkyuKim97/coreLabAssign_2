@@ -1,16 +1,13 @@
 ---
-title: Rose Pasta
+title: Steak
 photo: /0 assets/western/rosepasta.JPG
-index: 3
+index: 5
 time: 20
 preTime: 0
 ingredients:
-  - Rose sauce
-  - Pasta noodle
+  - Beef
 when:
-  lunch
   dinner
-style: italian
 ---
 # this is Rose Pasta
 ## recipe

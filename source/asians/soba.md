@@ -2,7 +2,7 @@
 title: Soba
 photo: /0 assets/asian/soba.JPG
 index: 1
-time: 10-20
+time: 10
 preTime: 0
 ingredients:
   - soba noodle

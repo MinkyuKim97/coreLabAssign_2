@@ -191,6 +191,11 @@ section {
     scroll-snap-align: start;
     padding-top: 5vh;
 }
+.controlBox{
+  display: flex;                 /* 가로로 정렬 */
+  justify-content: space-between; /* 양 끝으로 밀기 */
+  align-items: end;  
+}
 #sortIndex, #sortTitle{
     font-family: "Domine", serif;
     font-optical-sizing: auto;
@@ -205,6 +210,27 @@ section {
     color:  rgb(87, 87, 87);
     background-color: rgb(124, 124, 118);
     transition: all 0.3s ease-in-out;
+}
+#num1, #num2, #num3, #num4{
+    font-family: "Domine", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    padding: 8px 16px;
+    margin: 0;
+    border: none;
+    font-size: 0.8em;
+    border-top-left-radius: var(--edgeRadius);
+    border-top-right-radius: var(--edgeRadius);
+    cursor: pointer;
+    color:  rgb(87, 87, 87);
+    background-color: rgb(124, 124, 118);
+    transition: all 0.3s ease-in-out;
+}
+#num1.active, #num2.active, #num3.active, #num4.active{
+    background-color: var(--darkColor);
+    color:  black;
+    font-size: 0.8em;
 }
 
 #sortIndex.active, #sortTitle.active{
@@ -221,15 +247,15 @@ section {
     padding: 2%;
     border-bottom-left-radius: var(--edgeRadius);
     border-bottom-right-radius: var(--edgeRadius);
-    border-top-right-radius: var(--edgeRadius);
+    /* border-top-right-radius: var(--edgeRadius); */
 }
 
 #recipeContGrid a{
     display: block;
 }
-.recipe{
+/* .recipe{
     display: block;
-}
+} */
 .previewImgBox{
     width: 100%;
     height: 25vh;
